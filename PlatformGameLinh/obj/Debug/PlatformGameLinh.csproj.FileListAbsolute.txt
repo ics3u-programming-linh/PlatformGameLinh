@@ -1,0 +1,10 @@
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\bin\Debug\PlatformGameLinh.exe.config
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\bin\Debug\PlatformGameLinh.exe
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\bin\Debug\PlatformGameLinh.pdb
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.csprojAssemblyReference.cache
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.frmLevel1.resources
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.Properties.Resources.resources
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.csproj.GenerateResource.cache
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.exe
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.pdb
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.frmWin.resources
