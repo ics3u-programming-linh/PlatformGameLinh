@@ -7,4 +7,6 @@ C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGam
 C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.csproj.GenerateResource.cache
 C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.exe
 C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.pdb
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.frmSplashScreen.resources
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.frmInstructions.resources
 C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.frmWin.resources

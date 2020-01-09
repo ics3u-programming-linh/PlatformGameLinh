@@ -30,7 +30,16 @@ namespace PlatformGameLinh
         public frmLevel1()
         {
             InitializeComponent();
-            
+
+            //** MAKE SURE TO UNHIDE ALL OBJECTS LOL
+
+            // hide pictures, labels
+            //lblPoints.Hide();
+            //btnLevel2.Hide();
+            //picWinLoseScreen.Hide();
+            //picWin.Hide();
+            //btnRestart.Hide();
+            //picLoseScreen.Hide();
         }
 
         private void keyisdown(object sender, KeyEventArgs e)
@@ -118,6 +127,10 @@ namespace PlatformGameLinh
                         // set force to 8, and player is going to be above the platform
                         force = 8;
                         picPlayer.Top = x.Top - picPlayer.Height;
+
+                        // increment points
+                        score = score++;
+
                     }
                 }
 
@@ -130,26 +143,32 @@ namespace PlatformGameLinh
                     }
                 }
 
-                // Call interact door
-                InteractDoor();
+                // if player touches the door, stop timer and display you win
+                if (picPlayer.Bounds.IntersectsWith(picDoor.Bounds))
+                {
+                    // stop timers
+                    tmrTimer.Stop();
+                    tmrCountdown.Stop();
+
+                    // close this form and open win screen
+                    this.Hide();
+                    var WinScreen = new frmWin();
+                    WinScreen.Closed += (s, args) => this.Close();
+                    WinScreen.Show();
+
+                    // Show pictures, buttons, images
+                    btnLevel2.Show();
+                    picWin.Show();
+                    picWinLoseScreen.Show();
+                    lblPoints.Show();
+
+                    // Call image to front
+                    ImageToFront();
+
+                }
             }
         }
 
-        private void InteractDoor()
-        {
-            // if player touches the door, stop timer and display you win
-            if (picPlayer.Bounds.IntersectsWith(picDoor.Bounds))
-            {
-                // stop timers
-                tmrTimer.Stop();
-                tmrCountdown.Stop();
-
-                // Go to win screen
-                new frmWin().Show();
-
-            }
-            
-        }
         private void tmrCountdown_Tick(object sender, EventArgs e)
         {
 
@@ -191,24 +210,43 @@ namespace PlatformGameLinh
                 }
                 else
                 {
+                    // stop time
+                    tmrTimer.Stop();
+                    tmrCountdown.Stop();
+
                     // remove a life
                     lives = lives - 1;
+
+                    // Show pictures, boxes, labels
+                    //lblPoints.Show();
+                    //picWinLoseScreen.Show();
+                    //btnRestart.Show();
+                    //picLoseScreen.Show();
+
+                    // Call Image to Front
+                    ImageToFront();
 
                     // display lives
                     picHeart1.Hide();
                     picHeart2.Hide();
                     picHeart3.Hide();
 
-                    // call reset time
-                    ResetTime();
-
                     // Go to the You Lose Form
-                    
+
 
                 }
             }
         }
 
+        private void ImageToFront()
+        {
+            // Bring images to the front 
+            picLoseScreen.BringToFront();
+            btnRestart.BringToFront();
+            lblPoints.BringToFront();
+            picWinLoseScreen.BringToFront();
+            btnLevel2.BringToFront();
+        }
         private void ResetTime()
         {
             // reset time
@@ -216,7 +254,13 @@ namespace PlatformGameLinh
             timeLeft = 5;
         }
 
-        // need splash screen, win screen, you lose screen
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            // Restart Application
+            Application.Restart();
+        }
+
+        // need splash screen, 
         // error with win screen, loads multiple times... idk why...
         // instructions screen
         // extra added countdown timer... point system ... 
