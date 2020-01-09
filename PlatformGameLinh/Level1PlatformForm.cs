@@ -30,16 +30,21 @@ namespace PlatformGameLinh
         public frmLevel1()
         {
             InitializeComponent();
+            // call hide objects
+            HideWinLose();
 
-            //** MAKE SURE TO UNHIDE ALL OBJECTS LOL
+        }
 
+        private void HideWinLose()
+        {
             // hide pictures, labels
-            //lblPoints.Hide();
-            //btnLevel2.Hide();
-            //picWinLoseScreen.Hide();
-            //picWin.Hide();
-            //btnRestart.Hide();
-            //picLoseScreen.Hide();
+            btnNext.Hide();
+        }
+
+        private void ShowWinLose()
+        {
+            // Show pictures, buttons, images
+            btnNext.Show();
         }
 
         private void keyisdown(object sender, KeyEventArgs e)
@@ -134,11 +139,15 @@ namespace PlatformGameLinh
                     }
                 }
 
+                // if x is a picture box and tag is coin, continue
                 if (x is PictureBox && x.Tag == "coin")
                 {
                     if (picPlayer.Bounds.IntersectsWith(x.Bounds) && !jumping)
                     {
+                        // remove the coin
                         this.Controls.Remove(x);
+
+                        // increment score
                         score++;
                     }
                 }
@@ -150,17 +159,8 @@ namespace PlatformGameLinh
                     tmrTimer.Stop();
                     tmrCountdown.Stop();
 
-                    // close this form and open win screen
-                    this.Hide();
-                    var WinScreen = new frmWin();
-                    WinScreen.Closed += (s, args) => this.Close();
-                    WinScreen.Show();
-
-                    // Show pictures, buttons, images
-                    btnLevel2.Show();
-                    picWin.Show();
-                    picWinLoseScreen.Show();
-                    lblPoints.Show();
+                    // Call Show Win
+                    ShowWinLose();
 
                     // Call image to front
                     ImageToFront();
@@ -177,7 +177,7 @@ namespace PlatformGameLinh
             timeLeft = totalSeconds;
 
             // display the time left
-            lblTimer.Text = "Time Left:" + timeLeft;
+            lblTimer.Text = "Time Left: " + timeLeft;
 
             // remove a life if total seconds is 0
             if (totalSeconds <= 0)
@@ -217,11 +217,8 @@ namespace PlatformGameLinh
                     // remove a life
                     lives = lives - 1;
 
-                    // Show pictures, boxes, labels
-                    //lblPoints.Show();
-                    //picWinLoseScreen.Show();
-                    //btnRestart.Show();
-                    //picLoseScreen.Show();
+                    // call lose
+                    ShowWinLose();
 
                     // Call Image to Front
                     ImageToFront();
@@ -231,9 +228,6 @@ namespace PlatformGameLinh
                     picHeart2.Hide();
                     picHeart3.Hide();
 
-                    // Go to the You Lose Form
-
-
                 }
             }
         }
@@ -241,11 +235,7 @@ namespace PlatformGameLinh
         private void ImageToFront()
         {
             // Bring images to the front 
-            picLoseScreen.BringToFront();
-            btnRestart.BringToFront();
-            lblPoints.BringToFront();
-            picWinLoseScreen.BringToFront();
-            btnLevel2.BringToFront();
+            btnNext.BringToFront();
         }
         private void ResetTime()
         {
@@ -256,16 +246,30 @@ namespace PlatformGameLinh
 
         private void btnRestart_Click(object sender, EventArgs e)
         {
-            // Restart Application
-            Application.Restart();
         }
 
-        // need splash screen, 
-        // error with win screen, loads multiple times... idk why...
-        // instructions screen
+        private void BtnLevel2_Click(object sender, EventArgs e)
+        {
+            if (lives > 0)
+            {
+                // close this form and open win screen
+                this.Hide();
+                var WinScreen = new frmWin();
+                WinScreen.Closed += (s, args) => this.Close();
+                WinScreen.Show();
+            }
+            else
+            {
+                // close this form and open instructions form
+                this.Hide();
+                var LoseScreen = new frmLose();
+                LoseScreen.Closed += (s, args) => this.Close();
+                LoseScreen.Show();
+            }
+
+
+        }
         // extra added countdown timer... point system ... 
-        // might think about it 
-        // exit button, new game button...
         // if have time extra level w/ different backgrounds.
     }
 }

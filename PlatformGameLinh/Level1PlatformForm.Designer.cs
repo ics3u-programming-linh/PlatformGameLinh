@@ -32,12 +32,8 @@
             this.tmrTimer = new System.Windows.Forms.Timer(this.components);
             this.lblTimer = new System.Windows.Forms.Label();
             this.tmrCountdown = new System.Windows.Forms.Timer(this.components);
-            this.btnLevel2 = new System.Windows.Forms.Button();
-            this.lblPoints = new System.Windows.Forms.Label();
-            this.btnRestart = new System.Windows.Forms.Button();
-            this.picLoseScreen = new System.Windows.Forms.PictureBox();
-            this.picWin = new System.Windows.Forms.PictureBox();
-            this.picWinLoseScreen = new System.Windows.Forms.PictureBox();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.picCoin = new System.Windows.Forms.PictureBox();
             this.picHeart3 = new System.Windows.Forms.PictureBox();
             this.picHeart2 = new System.Windows.Forms.PictureBox();
             this.picHeart1 = new System.Windows.Forms.PictureBox();
@@ -52,9 +48,11 @@
             this.picPlayer = new System.Windows.Forms.PictureBox();
             this.picPlatform = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picLoseScreen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWinLoseScreen)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picCoin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeart3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeart1)).BeginInit();
@@ -69,6 +67,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlatform)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrTimer
@@ -81,10 +83,10 @@
             // 
             this.lblTimer.AutoSize = true;
             this.lblTimer.BackColor = System.Drawing.Color.Transparent;
-            this.lblTimer.Font = new System.Drawing.Font("Orator Std", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimer.Location = new System.Drawing.Point(12, 9);
             this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(110, 21);
+            this.lblTimer.Size = new System.Drawing.Size(79, 20);
             this.lblTimer.TabIndex = 11;
             this.lblTimer.Text = "Time Left:";
             // 
@@ -94,65 +96,27 @@
             this.tmrCountdown.Interval = 1000;
             this.tmrCountdown.Tick += new System.EventHandler(this.tmrCountdown_Tick);
             // 
-            // btnLevel2
+            // btnNext
             // 
-            this.btnLevel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLevel2.Location = new System.Drawing.Point(249, 411);
-            this.btnLevel2.Name = "btnLevel2";
-            this.btnLevel2.Size = new System.Drawing.Size(133, 38);
-            this.btnLevel2.TabIndex = 17;
-            this.btnLevel2.Text = "Next";
-            this.btnLevel2.UseVisualStyleBackColor = true;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Location = new System.Drawing.Point(111, 280);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(260, 65);
+            this.btnNext.TabIndex = 17;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.BtnLevel2_Click);
             // 
-            // lblPoints
+            // picCoin
             // 
-            this.lblPoints.AutoSize = true;
-            this.lblPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPoints.Location = new System.Drawing.Point(74, 420);
-            this.lblPoints.Name = "lblPoints";
-            this.lblPoints.Size = new System.Drawing.Size(48, 16);
-            this.lblPoints.TabIndex = 18;
-            this.lblPoints.Text = "Points:";
-            // 
-            // btnRestart
-            // 
-            this.btnRestart.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestart.Location = new System.Drawing.Point(249, 411);
-            this.btnRestart.Name = "btnRestart";
-            this.btnRestart.Size = new System.Drawing.Size(133, 38);
-            this.btnRestart.TabIndex = 19;
-            this.btnRestart.Text = "Restart";
-            this.btnRestart.UseVisualStyleBackColor = true;
-            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
-            // 
-            // picLoseScreen
-            // 
-            this.picLoseScreen.Image = global::PlatformGameLinh.Properties.Resources.lose1;
-            this.picLoseScreen.Location = new System.Drawing.Point(74, 180);
-            this.picLoseScreen.Name = "picLoseScreen";
-            this.picLoseScreen.Size = new System.Drawing.Size(353, 191);
-            this.picLoseScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLoseScreen.TabIndex = 20;
-            this.picLoseScreen.TabStop = false;
-            // 
-            // picWin
-            // 
-            this.picWin.Image = global::PlatformGameLinh.Properties.Resources.win;
-            this.picWin.Location = new System.Drawing.Point(74, 180);
-            this.picWin.Name = "picWin";
-            this.picWin.Size = new System.Drawing.Size(353, 191);
-            this.picWin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picWin.TabIndex = 16;
-            this.picWin.TabStop = false;
-            // 
-            // picWinLoseScreen
-            // 
-            this.picWinLoseScreen.BackColor = System.Drawing.Color.Transparent;
-            this.picWinLoseScreen.Location = new System.Drawing.Point(32, 120);
-            this.picWinLoseScreen.Name = "picWinLoseScreen";
-            this.picWinLoseScreen.Size = new System.Drawing.Size(425, 373);
-            this.picWinLoseScreen.TabIndex = 15;
-            this.picWinLoseScreen.TabStop = false;
+            this.picCoin.Image = global::PlatformGameLinh.Properties.Resources.coin;
+            this.picCoin.Location = new System.Drawing.Point(242, 454);
+            this.picCoin.Name = "picCoin";
+            this.picCoin.Size = new System.Drawing.Size(41, 29);
+            this.picCoin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCoin.TabIndex = 18;
+            this.picCoin.TabStop = false;
+            this.picCoin.Tag = "coin";
             // 
             // picHeart3
             // 
@@ -302,17 +266,61 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PlatformGameLinh.Properties.Resources.coin;
+            this.pictureBox2.Location = new System.Drawing.Point(88, 385);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(41, 29);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Tag = "coin";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::PlatformGameLinh.Properties.Resources.coin;
+            this.pictureBox3.Location = new System.Drawing.Point(72, 546);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(41, 29);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 20;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Tag = "coin";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::PlatformGameLinh.Properties.Resources.coin;
+            this.pictureBox4.Location = new System.Drawing.Point(191, 546);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(41, 29);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 21;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Tag = "coin";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::PlatformGameLinh.Properties.Resources.coin;
+            this.pictureBox5.Location = new System.Drawing.Point(223, 193);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(41, 29);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 22;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Tag = "coin";
+            // 
             // frmLevel1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 611);
-            this.Controls.Add(this.btnRestart);
-            this.Controls.Add(this.picLoseScreen);
-            this.Controls.Add(this.lblPoints);
-            this.Controls.Add(this.btnLevel2);
-            this.Controls.Add(this.picWin);
-            this.Controls.Add(this.picWinLoseScreen);
+            this.ClientSize = new System.Drawing.Size(486, 611);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.picCoin);
+            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.picHeart3);
             this.Controls.Add(this.picHeart2);
             this.Controls.Add(this.picHeart1);
@@ -332,9 +340,7 @@
             this.Text = "Level 1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
-            ((System.ComponentModel.ISupportInitialize)(this.picLoseScreen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWinLoseScreen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCoin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeart3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeart1)).EndInit();
@@ -349,6 +355,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlatform)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,12 +383,12 @@
         private System.Windows.Forms.PictureBox picHeart1;
         private System.Windows.Forms.PictureBox picHeart2;
         private System.Windows.Forms.PictureBox picHeart3;
-        private System.Windows.Forms.PictureBox picWinLoseScreen;
-        private System.Windows.Forms.PictureBox picWin;
-        private System.Windows.Forms.Button btnLevel2;
-        private System.Windows.Forms.Label lblPoints;
-        private System.Windows.Forms.Button btnRestart;
-        private System.Windows.Forms.PictureBox picLoseScreen;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.PictureBox picCoin;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 
