@@ -10,12 +10,22 @@ using System.Windows.Forms;
 
 namespace PlatformGameLinh
 {
+
     public partial class frmSplashScreen : Form
     {
+        // upload sound
+        System.Media.SoundPlayer soundPlayer1 = new System.Media.SoundPlayer(@"C:\Users\s272936\Documents\PlatformGameLinh\PlatformGameLinh\Sounds\background.wav");
+
         public frmSplashScreen()
         {
             InitializeComponent();
             btnStart.Hide();
+
+            // Play the sound
+            soundPlayer1.Play();
+
+            // Loop sound
+            soundPlayer1.PlayLooping();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,6 +50,7 @@ namespace PlatformGameLinh
         }
         private void tmrStart_Tick(object sender, EventArgs e)
         {
+
             // delay the button to .2 seconds
             System.Threading.Thread.Sleep(200);
 
@@ -56,9 +67,6 @@ namespace PlatformGameLinh
             Instructions.Show();
         }
 
-        // you need a working you win and you lose screen form
-        // keeps popping up.
-        // also need to track points somehow lol. xD
-        // background music and collision sound.
+        // only problem is that when coin collides with coin, plays sound, but the other background music stops working. 
     }
 }

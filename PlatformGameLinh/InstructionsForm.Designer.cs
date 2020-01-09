@@ -63,10 +63,10 @@
             // 
             this.lblInstructions.AutoSize = true;
             this.lblInstructions.BackColor = System.Drawing.Color.HotPink;
-            this.lblInstructions.Font = new System.Drawing.Font("Bebas Neue", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInstructions.Location = new System.Drawing.Point(43, 35);
+            this.lblInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInstructions.Location = new System.Drawing.Point(42, 73);
             this.lblInstructions.Name = "lblInstructions";
-            this.lblInstructions.Size = new System.Drawing.Size(396, 176);
+            this.lblInstructions.Size = new System.Drawing.Size(390, 132);
             this.lblInstructions.TabIndex = 2;
             this.lblInstructions.Text = "The objective of the game is \r\nto reach to the door. In order \r\nto do so, you mus" +
     "t jump on \r\ndifferent platforms.";

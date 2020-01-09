@@ -7,18 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace PlatformGameLinh
 {
     public partial class frmLevel1 : Form
     {
+        //create sound
+        System.Media.SoundPlayer soundPlayer = new System.Media.SoundPlayer(@"C:\Users\s272936\Documents\PlatformGameLinh\PlatformGameLinh\Sounds\chime.wav");
+
+
         // declare variables and set bool variables 
         bool goleft = false;
         bool goright = false;
         bool jumping = false;
         int jumpSpeed = 10;
         int force = 5;
-        int score = 0;
 
         // declare variables for lives
         int lives = 3;
@@ -87,6 +91,7 @@ namespace PlatformGameLinh
 
         private void tmrTimer_Tick(object sender, EventArgs e)
         {
+
             // continously drop player towards the platform (the ground)
             picPlayer.Top += jumpSpeed;
 
@@ -133,9 +138,6 @@ namespace PlatformGameLinh
                         force = 8;
                         picPlayer.Top = x.Top - picPlayer.Height;
 
-                        // increment points
-                        score = score++;
-
                     }
                 }
 
@@ -144,11 +146,12 @@ namespace PlatformGameLinh
                 {
                     if (picPlayer.Bounds.IntersectsWith(x.Bounds) && !jumping)
                     {
+                        // Play the sound
+                        soundPlayer.Play();
+
                         // remove the coin
                         this.Controls.Remove(x);
 
-                        // increment score
-                        score++;
                     }
                 }
 
