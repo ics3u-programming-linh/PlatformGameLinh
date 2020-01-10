@@ -73,6 +73,26 @@ namespace PlatformGameLinh.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap coin1 {
+            get {
+                object obj = ResourceManager.GetObject("coin1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap coint2 {
+            get {
+                object obj = ResourceManager.GetObject("coint2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap door {
             get {
                 object obj = ResourceManager.GetObject("door", resourceCulture);
@@ -176,6 +196,16 @@ namespace PlatformGameLinh.Properties {
         internal static System.Drawing.Bitmap player {
             get {
                 object obj = ResourceManager.GetObject("player", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spike {
+            get {
+                object obj = ResourceManager.GetObject("spike", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

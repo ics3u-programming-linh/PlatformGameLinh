@@ -13,8 +13,7 @@ namespace PlatformGameLinh
 {
     public partial class frmLevel1 : Form
     {
-        //create sound
-        System.Media.SoundPlayer soundPlayer = new System.Media.SoundPlayer(@"C:\Users\s272936\Documents\PlatformGameLinh\PlatformGameLinh\Sounds\chime.wav");
+
 
 
         // declare variables and set bool variables 
@@ -36,7 +35,6 @@ namespace PlatformGameLinh
             InitializeComponent();
             // call hide objects
             HideWinLose();
-
         }
 
         private void HideWinLose()
@@ -141,13 +139,16 @@ namespace PlatformGameLinh
                     }
                 }
 
-                // if x is a picture box and tag is coin, continue
-                if (x is PictureBox && x.Tag == "coin")
+                    // if x is a picture box and tag is coin, continue
+                    if (x is PictureBox && x.Tag == "coin")
                 {
                     if (picPlayer.Bounds.IntersectsWith(x.Bounds) && !jumping)
                     {
+                        // assign url
+                        wmpChime.URL = "C:/Users/s272936/Documents/PlatformGameLinh/PlatformGameLinh/Sounds/chime.wav";
+
                         // Play the sound
-                        soundPlayer.Play();
+                        wmpChime.Ctlcontrols.play();
 
                         // remove the coin
                         this.Controls.Remove(x);
@@ -233,8 +234,13 @@ namespace PlatformGameLinh
 
                 }
             }
+
         }
 
+        private void AmountLives()
+        {
+
+        }
         private void ImageToFront()
         {
             // Bring images to the front 
@@ -274,5 +280,6 @@ namespace PlatformGameLinh
         }
         // extra added countdown timer... point system ... 
         // if have time extra level w/ different backgrounds.
+        // for this level i need to work on the png files...idk , and i need to work on the soundsss efffects luuuuuuul
     }
 }
