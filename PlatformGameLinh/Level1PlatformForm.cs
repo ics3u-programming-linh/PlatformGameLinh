@@ -13,9 +13,6 @@ namespace PlatformGameLinh
 {
     public partial class frmLevel1 : Form
     {
-
-
-
         // declare variables and set bool variables 
         bool goleft = false;
         bool goright = false;
@@ -145,7 +142,7 @@ namespace PlatformGameLinh
                     if (picPlayer.Bounds.IntersectsWith(x.Bounds) && !jumping)
                     {
                         // assign url
-                        wmpChime.URL = "C:/Users/s272936/Documents/PlatformGameLinh/PlatformGameLinh/Sounds/chime.wav";
+                        wmpChime.URL = "Sounds/chime.wav";
 
                         // Play the sound
                         wmpChime.Ctlcontrols.play();
@@ -162,6 +159,12 @@ namespace PlatformGameLinh
                     // stop timers
                     tmrTimer.Stop();
                     tmrCountdown.Stop();
+
+                    // assign url
+                    wmpDoor.URL = "Sounds/clink.mp3";
+
+                    // Play the sound
+                    wmpDoor.Ctlcontrols.play();
 
                     // Call Show Win
                     ShowWinLose();
@@ -196,6 +199,9 @@ namespace PlatformGameLinh
                     picHeart2.Show();
                     picHeart3.Hide();
 
+                    // call lose life sound
+                    LoseLifeSound();
+
                     // call reset time
                     ResetTime();
                 }
@@ -209,37 +215,53 @@ namespace PlatformGameLinh
                     picHeart2.Hide();
                     picHeart3.Hide();
 
+                    // call lose life sound
+                    LoseLifeSound();
+
                     // call reset time
                     ResetTime();
                 }
                 else
                 {
-                    // stop time
-                    tmrTimer.Stop();
-                    tmrCountdown.Stop();
 
                     // remove a life
                     lives = lives - 1;
 
-                    // call lose
-                    ShowWinLose();
+                    // call lose life sound
+                    LoseLifeSound();
 
-                    // Call Image to Front
-                    ImageToFront();
+                    // stop time
+                    tmrTimer.Stop();
+                    tmrCountdown.Stop();
+
+                    // call lose
+                    //ShowWinLose();
 
                     // display lives
                     picHeart1.Hide();
                     picHeart2.Hide();
                     picHeart3.Hide();
 
+                    // Call Image to Front
+                    ImageToFront();
+
+                    // close this form and open instructions form
+                    this.Hide();
+                    var LoseScreen = new frmLose();
+                    LoseScreen.Closed += (s, args) => this.Close();
+                    LoseScreen.Show();
                 }
             }
 
         }
 
-        private void AmountLives()
+        private void LoseLifeSound()
         {
+            // assign url
+            wmpLoseLife.URL = "Sounds/quack.mp3";
 
+            // Play the sound
+            wmpLoseLife.Ctlcontrols.play();
         }
         private void ImageToFront()
         {
@@ -252,7 +274,6 @@ namespace PlatformGameLinh
             totalSeconds = 6;
             timeLeft = 5;
         }
-
         private void btnRestart_Click(object sender, EventArgs e)
         {
         }
@@ -275,11 +296,6 @@ namespace PlatformGameLinh
                 LoseScreen.Closed += (s, args) => this.Close();
                 LoseScreen.Show();
             }
-
-
         }
-        // extra added countdown timer... point system ... 
-        // if have time extra level w/ different backgrounds.
-        // for this level i need to work on the png files...idk , and i need to work on the soundsss efffects luuuuuuul
     }
 }

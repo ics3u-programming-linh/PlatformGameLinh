@@ -207,5 +207,11 @@
   <ItemGroup>
     <None Include="Images\coin.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Level2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\platform2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

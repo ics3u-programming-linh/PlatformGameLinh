@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLevel1));
-            this.tmrTimer = new System.Windows.Forms.Timer(this.components);
             this.lblTimer = new System.Windows.Forms.Label();
             this.tmrCountdown = new System.Windows.Forms.Timer(this.components);
             this.btnNext = new System.Windows.Forms.Button();
@@ -56,6 +55,7 @@
             this.picPlayer = new System.Windows.Forms.PictureBox();
             this.picPlatform = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tmrTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.wmpChime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpLoseLife)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpDoor)).BeginInit();
@@ -79,12 +79,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPlatform)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tmrTimer
-            // 
-            this.tmrTimer.Enabled = true;
-            this.tmrTimer.Interval = 20;
-            this.tmrTimer.Tick += new System.EventHandler(this.tmrTimer_Tick);
             // 
             // lblTimer
             // 
@@ -147,9 +141,9 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::PlatformGameLinh.Properties.Resources.coin;
-            this.pictureBox5.Location = new System.Drawing.Point(223, 193);
+            this.pictureBox5.Location = new System.Drawing.Point(218, 190);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(41, 29);
+            this.pictureBox5.Size = new System.Drawing.Size(43, 32);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 22;
             this.pictureBox5.TabStop = false;
@@ -203,7 +197,7 @@
             // 
             this.picHeart3.BackColor = System.Drawing.Color.Transparent;
             this.picHeart3.Image = global::PlatformGameLinh.Properties.Resources.heart;
-            this.picHeart3.Location = new System.Drawing.Point(433, 9);
+            this.picHeart3.Location = new System.Drawing.Point(431, 9);
             this.picHeart3.Name = "picHeart3";
             this.picHeart3.Size = new System.Drawing.Size(53, 45);
             this.picHeart3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -350,6 +344,12 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // tmrTimer
+            // 
+            this.tmrTimer.Enabled = true;
+            this.tmrTimer.Interval = 20;
+            this.tmrTimer.Tick += new System.EventHandler(this.tmrTimer_Tick);
+            // 
             // frmLevel1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,7 +415,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox picPlatform;
         private System.Windows.Forms.PictureBox picPlayer;
-        private System.Windows.Forms.Timer tmrTimer;
         private System.Windows.Forms.PictureBox picDoor;
         private System.Windows.Forms.PictureBox picPlatform1;
         private System.Windows.Forms.PictureBox picPlatform2;
@@ -438,6 +437,7 @@
         private AxWMPLib.AxWindowsMediaPlayer wmpChime;
         private AxWMPLib.AxWindowsMediaPlayer wmpLoseLife;
         private AxWMPLib.AxWindowsMediaPlayer wmpDoor;
+        private System.Windows.Forms.Timer tmrTimer;
     }
 }
 

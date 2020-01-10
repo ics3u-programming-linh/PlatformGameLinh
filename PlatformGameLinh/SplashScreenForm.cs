@@ -14,7 +14,7 @@ namespace PlatformGameLinh
     public partial class frmSplashScreen : Form
     {
         // upload sound
-        System.Media.SoundPlayer soundPlayer1 = new System.Media.SoundPlayer(@"C:\Users\s272936\Documents\PlatformGameLinh\PlatformGameLinh\Sounds\background.wav");
+        //System.Media.SoundPlayer soundPlayer1 = new System.Media.SoundPlayer(@"C:\Users\s272936\Documents\PlatformGameLinh\PlatformGameLinh\Sounds\background.wav");
 
         public frmSplashScreen()
         {
@@ -22,10 +22,10 @@ namespace PlatformGameLinh
             btnStart.Hide();
 
             // Play the sound
-            soundPlayer1.Play();
+            //soundPlayer1.Play();
 
             // Loop sound
-            soundPlayer1.PlayLooping();
+            //soundPlayer1.PlayLooping();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

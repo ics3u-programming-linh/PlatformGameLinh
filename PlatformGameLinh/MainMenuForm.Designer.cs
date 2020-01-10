@@ -69,6 +69,7 @@
             this.btnLevel2.TabIndex = 2;
             this.btnLevel2.Text = "Level 2";
             this.btnLevel2.UseVisualStyleBackColor = true;
+            this.btnLevel2.Click += new System.EventHandler(this.BtnLevel2_Click);
             // 
             // btnLevel3
             // 

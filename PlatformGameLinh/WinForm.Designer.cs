@@ -32,8 +32,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnLevel2 = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.mnuStrip = new System.Windows.Forms.MenuStrip();
+            this.mniExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniInstructions = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.mnuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -77,11 +81,37 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
+            // mnuStrip
+            // 
+            this.mnuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mniExit,
+            this.mniInstructions});
+            this.mnuStrip.Location = new System.Drawing.Point(0, 0);
+            this.mnuStrip.Name = "mnuStrip";
+            this.mnuStrip.Size = new System.Drawing.Size(484, 24);
+            this.mnuStrip.TabIndex = 5;
+            this.mnuStrip.Text = "menuStrip1";
+            // 
+            // mniExit
+            // 
+            this.mniExit.Name = "mniExit";
+            this.mniExit.Size = new System.Drawing.Size(38, 20);
+            this.mniExit.Text = "Exit";
+            this.mniExit.Click += new System.EventHandler(this.MniExit_Click);
+            // 
+            // mniInstructions
+            // 
+            this.mniInstructions.Name = "mniInstructions";
+            this.mniInstructions.Size = new System.Drawing.Size(81, 20);
+            this.mniInstructions.Text = "Instructions";
+            this.mniInstructions.Click += new System.EventHandler(this.MniInstructions_Click_1);
+            // 
             // frmWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 611);
+            this.Controls.Add(this.mnuStrip);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnLevel2);
             this.Controls.Add(this.pictureBox2);
@@ -90,7 +120,10 @@
             this.Text = "Platform Game";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.mnuStrip.ResumeLayout(false);
+            this.mnuStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -100,5 +133,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnLevel2;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.MenuStrip mnuStrip;
+        private System.Windows.Forms.ToolStripMenuItem mniExit;
+        private System.Windows.Forms.ToolStripMenuItem mniInstructions;
     }
 }
