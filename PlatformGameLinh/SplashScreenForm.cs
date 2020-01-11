@@ -13,19 +13,21 @@ namespace PlatformGameLinh
 
     public partial class frmSplashScreen : Form
     {
-        // upload sound
-        //System.Media.SoundPlayer soundPlayer1 = new System.Media.SoundPlayer(@"C:\Users\s272936\Documents\PlatformGameLinh\PlatformGameLinh\Sounds\background.wav");
 
         public frmSplashScreen()
         {
             InitializeComponent();
             btnStart.Hide();
 
-            // Play the sound
-            //soundPlayer1.Play();
+            // assign url and play music
+            wmpBackground.URL = "Sounds/background.mp3";
 
-            // Loop sound
-            //soundPlayer1.PlayLooping();
+            // play the music
+            wmpBackground.Ctlcontrols.play();
+
+            //loop
+            wmpBackground.settings.setMode("loop", true);
+
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,9 +52,8 @@ namespace PlatformGameLinh
         }
         private void tmrStart_Tick(object sender, EventArgs e)
         {
-
-            // delay the button to .2 seconds
-            System.Threading.Thread.Sleep(200);
+            // delay the button to .1 seconds
+            System.Threading.Thread.Sleep(100);
 
             // show button
             btnStart.Show();
@@ -67,6 +68,14 @@ namespace PlatformGameLinh
             Instructions.Show();
         }
 
-        // only problem is that when coin collides with coin, plays sound, but the other background music stops working. 
+        private void mniCredits_Click(object sender, EventArgs e)
+        {
+            // close this form and open credits form
+            this.Hide();
+            var Credits = new frmCredits();
+            Credits.Closed += (s, args) => this.Close();
+            Credits.Show();
+        }
+
     }
 }

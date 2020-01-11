@@ -141,7 +141,7 @@ namespace PlatformGameLinh
                     if (picPlayer.Bounds.IntersectsWith(x.Bounds) && !jumping)
                     {
                         // assign url
-                        wmpChime.URL = "C:/Users/s272936/Documents/PlatformGameLinh/PlatformGameLinh/Sounds/chime.wav";
+                        wmpChime.URL = "Sounds/chime.wav";
 
                         // Play the sound
                         wmpChime.Ctlcontrols.play();
@@ -158,6 +158,12 @@ namespace PlatformGameLinh
                     // stop timers
                     tmrTimer.Stop();
                     tmrCountdown.Stop();
+
+                    // assign url
+                    wmpDoor.URL = "Sounds/clink.mp3";
+
+                    // Play the sound
+                    wmpDoor.Ctlcontrols.play();
 
                     // Call Show Win
                     ShowWinLose();
@@ -192,6 +198,9 @@ namespace PlatformGameLinh
                     picHeart2.Show();
                     picHeart3.Hide();
 
+                    // call lose life sound
+                    LoseLifeSound();
+
                     // call reset time
                     ResetTime();
                 }
@@ -205,20 +214,24 @@ namespace PlatformGameLinh
                     picHeart2.Hide();
                     picHeart3.Hide();
 
+                    // call lose life sound
+                    LoseLifeSound();
+
                     // call reset time
                     ResetTime();
                 }
                 else
                 {
-                    // stop time
-                    tmrTimer.Stop();
-                    tmrCountdown.Stop();
 
                     // remove a life
                     lives = lives - 1;
 
-                    // call lose
-                    ShowWinLose();
+                    // call lose life sound
+                    LoseLifeSound();
+
+                    // stop time
+                    tmrTimer.Stop();
+                    tmrCountdown.Stop();
 
                     // Call Image to Front
                     ImageToFront();
@@ -228,11 +241,24 @@ namespace PlatformGameLinh
                     picHeart2.Hide();
                     picHeart3.Hide();
 
+                    // close this form and open instructions form
+                    this.Hide();
+                    var LoseScreen = new frmLose();
+                    LoseScreen.Closed += (s, args) => this.Close();
+                    LoseScreen.Show();
                 }
             }
 
         }
 
+        private void LoseLifeSound()
+        {
+            // assign url
+            wmpLoseLife.URL = "Sounds/quack.mp3";
+
+            // Play the sound
+            wmpLoseLife.Ctlcontrols.play();
+        }
         private void ImageToFront()
         {
             // Bring images to the front 
@@ -247,7 +273,22 @@ namespace PlatformGameLinh
 
         private void BtnNext_Click(object sender, EventArgs e)
         {
-
+            if (lives > 0)
+            {
+                // close this form and open win screen
+                this.Hide();
+                var WinScreen = new frmWin2();
+                WinScreen.Closed += (s, args) => this.Close();
+                WinScreen.Show();
+            }
+            else
+            {
+                // close this form and open instructions form
+                this.Hide();
+                var LoseScreen = new frmLose();
+                LoseScreen.Closed += (s, args) => this.Close();
+                LoseScreen.Show();
+            }
         }
     }
 }
