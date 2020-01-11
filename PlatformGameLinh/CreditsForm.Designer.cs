@@ -31,6 +31,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mnuStrip = new System.Windows.Forms.MenuStrip();
             this.mniBack = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblCredits = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mnuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -62,11 +63,22 @@
             this.mniBack.Text = "Back";
             this.mniBack.Click += new System.EventHandler(this.mniBack_Click);
             // 
+            // lblCredits
+            // 
+            this.lblCredits.AutoSize = true;
+            this.lblCredits.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCredits.Location = new System.Drawing.Point(30, 299);
+            this.lblCredits.Name = "lblCredits";
+            this.lblCredits.Size = new System.Drawing.Size(431, 39);
+            this.lblCredits.TabIndex = 2;
+            this.lblCredits.Text = "PROGRAMMER: LINH HO";
+            // 
             // frmCredits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 611);
+            this.Controls.Add(this.lblCredits);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.mnuStrip);
             this.MainMenuStrip = this.mnuStrip;
@@ -85,5 +97,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.MenuStrip mnuStrip;
         private System.Windows.Forms.ToolStripMenuItem mniBack;
+        private System.Windows.Forms.Label lblCredits;
     }
 }
