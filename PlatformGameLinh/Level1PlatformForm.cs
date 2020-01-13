@@ -234,9 +234,6 @@ namespace PlatformGameLinh
                     tmrTimer.Stop();
                     tmrCountdown.Stop();
 
-                    // call lose
-                    //ShowWinLose();
-
                     // display lives
                     picHeart1.Hide();
                     picHeart2.Hide();
@@ -254,7 +251,6 @@ namespace PlatformGameLinh
             }
 
         }
-
         private void LoseLifeSound()
         {
             // assign url
@@ -263,6 +259,7 @@ namespace PlatformGameLinh
             // Play the sound
             wmpLoseLife.Ctlcontrols.play();
         }
+
         private void ImageToFront()
         {
             // Bring images to the front 
@@ -273,9 +270,6 @@ namespace PlatformGameLinh
             // reset time
             totalSeconds = 6;
             timeLeft = 5;
-        }
-        private void btnRestart_Click(object sender, EventArgs e)
-        {
         }
 
         private void BtnLevel2_Click(object sender, EventArgs e)

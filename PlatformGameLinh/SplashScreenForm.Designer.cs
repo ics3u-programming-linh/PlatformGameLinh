@@ -29,15 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSplashScreen));
             this.mnuStrip = new System.Windows.Forms.MenuStrip();
             this.mniExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mniRestart = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniInstructions = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrStart = new System.Windows.Forms.Timer(this.components);
-            this.mniInstructions = new System.Windows.Forms.ToolStripMenuItem();
+            this.wmpBackground = new AxWMPLib.AxWindowsMediaPlayer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mniCredits = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +50,8 @@
             this.mnuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mniExit,
             this.mniRestart,
-            this.mniInstructions});
+            this.mniInstructions,
+            this.mniCredits});
             this.mnuStrip.Location = new System.Drawing.Point(0, 0);
             this.mnuStrip.Name = "mnuStrip";
             this.mnuStrip.Size = new System.Drawing.Size(484, 24);
@@ -66,6 +71,13 @@
             this.mniRestart.Size = new System.Drawing.Size(55, 20);
             this.mniRestart.Text = "Restart";
             this.mniRestart.Click += new System.EventHandler(this.mniRestart_Click);
+            // 
+            // mniInstructions
+            // 
+            this.mniInstructions.Name = "mniInstructions";
+            this.mniInstructions.Size = new System.Drawing.Size(81, 20);
+            this.mniInstructions.Text = "Instructions";
+            this.mniInstructions.Click += new System.EventHandler(this.instructionsToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -94,22 +106,32 @@
             this.tmrStart.Interval = 2000;
             this.tmrStart.Tick += new System.EventHandler(this.tmrStart_Tick);
             // 
-            // mniInstructions
+            // wmpBackground
             // 
-            this.mniInstructions.Name = "mniInstructions";
-            this.mniInstructions.Size = new System.Drawing.Size(81, 20);
-            this.mniInstructions.Text = "Instructions";
-            this.mniInstructions.Click += new System.EventHandler(this.instructionsToolStripMenuItem_Click);
+            this.wmpBackground.Enabled = true;
+            this.wmpBackground.Location = new System.Drawing.Point(345, 428);
+            this.wmpBackground.Name = "wmpBackground";
+            this.wmpBackground.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpBackground.OcxState")));
+            this.wmpBackground.Size = new System.Drawing.Size(75, 23);
+            this.wmpBackground.TabIndex = 4;
+            this.wmpBackground.Visible = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PlatformGameLinh.Properties.Resources.HomeBackground;
-            this.pictureBox1.Location = new System.Drawing.Point(-5, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(-7, 22);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(491, 713);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // mniCredits
+            // 
+            this.mniCredits.Name = "mniCredits";
+            this.mniCredits.Size = new System.Drawing.Size(56, 20);
+            this.mniCredits.Text = "Credits";
+            this.mniCredits.Click += new System.EventHandler(this.mniCredits_Click);
             // 
             // frmSplashScreen
             // 
@@ -120,11 +142,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.mnuStrip);
+            this.Controls.Add(this.wmpBackground);
             this.MainMenuStrip = this.mnuStrip;
             this.Name = "frmSplashScreen";
             this.Text = "Platform Game by Linh Ho";
             this.mnuStrip.ResumeLayout(false);
             this.mnuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpBackground)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -141,5 +165,7 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Timer tmrStart;
         private System.Windows.Forms.ToolStripMenuItem mniInstructions;
+        private AxWMPLib.AxWindowsMediaPlayer wmpBackground;
+        private System.Windows.Forms.ToolStripMenuItem mniCredits;
     }
 }

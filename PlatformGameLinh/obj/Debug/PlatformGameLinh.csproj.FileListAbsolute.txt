@@ -31,3 +31,13 @@ C:\Users\s272936\Documents\PlatformGameLinh\PlatformGameLinh\bin\Debug\AxInterop
 C:\Users\s272936\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\Interop.WMPLib.dll
 C:\Users\s272936\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\s272936\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.csproj.ResolveComReference.cache
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\bin\Debug\Interop.WMPLib.dll
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\Interop.WMPLib.dll
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.csproj.ResolveComReference.cache
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.frmLevel2.resources
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.frmLose.resources
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.frmMainMenu.resources
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.frmWin2.resources
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.frmCredits.resources

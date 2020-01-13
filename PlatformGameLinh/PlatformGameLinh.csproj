@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreditsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditsForm.Designer.cs">
+      <DependentUpon>CreditsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InstructionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,15 @@
     <Compile Include="WinForm.Designer.cs">
       <DependentUpon>WinForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm2.Designer.cs">
+      <DependentUpon>WinForm2.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CreditsForm.resx">
+      <DependentUpon>CreditsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InstructionsForm.resx">
       <DependentUpon>InstructionsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WinForm.resx">
       <DependentUpon>WinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForm2.resx">
+      <DependentUpon>WinForm2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -212,6 +230,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\platform2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\win2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\credits.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
