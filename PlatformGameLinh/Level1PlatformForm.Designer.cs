@@ -218,6 +218,7 @@
             // picHeart1
             // 
             this.picHeart1.BackColor = System.Drawing.Color.Transparent;
+            this.picHeart1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picHeart1.Image = global::PlatformGameLinh.Properties.Resources.heart;
             this.picHeart1.Location = new System.Drawing.Point(318, 9);
             this.picHeart1.Name = "picHeart1";
