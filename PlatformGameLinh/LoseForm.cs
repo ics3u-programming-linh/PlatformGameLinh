@@ -19,11 +19,11 @@ namespace PlatformGameLinh
 
         private void BtnRestart_Click(object sender, EventArgs e)
         {
-            // close this form and open instructions form
+            // close this form and open main menu form
             this.Hide();
-            var Level1 = new frmLevel1();
-            Level1.Closed += (s, args) => this.Close();
-            Level1.Show();
+            var MainMenu = new frmMainMenu();
+            MainMenu.Closed += (s, args) => this.Close();
+            MainMenu.Show();
         }
 
         private void MniExit_Click(object sender, EventArgs e)

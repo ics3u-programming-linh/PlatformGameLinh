@@ -66,7 +66,7 @@
             this.btnRestart.Name = "btnRestart";
             this.btnRestart.Size = new System.Drawing.Size(192, 74);
             this.btnRestart.TabIndex = 5;
-            this.btnRestart.Text = "Restart";
+            this.btnRestart.Text = "Menu";
             this.btnRestart.UseVisualStyleBackColor = true;
             this.btnRestart.Click += new System.EventHandler(this.BtnRestart_Click);
             // 
@@ -84,7 +84,7 @@
             // mniExit
             // 
             this.mniExit.Name = "mniExit";
-            this.mniExit.Size = new System.Drawing.Size(38, 20);
+            this.mniExit.Size = new System.Drawing.Size(37, 20);
             this.mniExit.Text = "Exit";
             this.mniExit.Click += new System.EventHandler(this.MniExit_Click);
             // 

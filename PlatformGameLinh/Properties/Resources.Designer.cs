@@ -193,6 +193,16 @@ namespace PlatformGameLinh.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap loselife {
+            get {
+                object obj = ResourceManager.GetObject("loselife", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menuBackground {
             get {
                 object obj = ResourceManager.GetObject("menuBackground", resourceCulture);
