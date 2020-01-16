@@ -350,7 +350,7 @@
             // picSad3
             // 
             this.picSad3.Image = global::PlatformGameLinh.Properties.Resources.loselife;
-            this.picSad3.Location = new System.Drawing.Point(45, 532);
+            this.picSad3.Location = new System.Drawing.Point(12, 532);
             this.picSad3.Name = "picSad3";
             this.picSad3.Size = new System.Drawing.Size(55, 43);
             this.picSad3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

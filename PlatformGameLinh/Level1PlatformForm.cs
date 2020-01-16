@@ -30,8 +30,12 @@ namespace PlatformGameLinh
         public frmLevel1()
         {
             InitializeComponent();
+
+            
             // call hide objects
             HideWinLose();
+            Wall();
+
         }
 
         private void HideWinLose()
@@ -57,13 +61,16 @@ namespace PlatformGameLinh
             if (e.KeyCode == Keys.Right)
             {
                 goright = true;
+
             }
             // if space key is pressed, set jumping to true
             if (e.KeyCode == Keys.Space && !jumping)
             {
                 jumping = true;
             }
+            Wall();
         }
+        
 
         private void keyisup(object sender, KeyEventArgs e)
         {
@@ -82,13 +89,14 @@ namespace PlatformGameLinh
             {
                 jumping = false;
             }
+            Wall();
         }
 
         private void tmrTimer_Tick(object sender, EventArgs e)
         {
-
+            Wall();
             // continously drop player towards the platform (the ground)
-            picPlayer.Top += jumpSpeed;
+            player.Top += jumpSpeed;
 
             // if jumping and force is less than 0, create a gravity effect
             if (jumping && force < 0)
@@ -100,13 +108,13 @@ namespace PlatformGameLinh
             if (goleft)
             {
                 // push character towards left of screen
-                picPlayer.Left -= 5;
+                player.Left -= 5;
             }
 
             if (goright)
             {
                 // push character towards right of screen
-                picPlayer.Left += 5;
+                player.Left += 5;
             }
 
             if (jumping)
@@ -127,11 +135,11 @@ namespace PlatformGameLinh
                 // continue if x is a picturebox and the tag equals to the platform
                 if (x is PictureBox && x.Tag == "platform")
                 {
-                    if (picPlayer.Bounds.IntersectsWith(x.Bounds) && !jumping)
+                    if (player.Bounds.IntersectsWith(x.Bounds) && !jumping)
                     {
                         // set force to 8, and player is going to be above the platform
                         force = 8;
-                        picPlayer.Top = x.Top - picPlayer.Height;
+                        player.Top = x.Top - player.Height;
 
                     }
                 }
@@ -139,7 +147,7 @@ namespace PlatformGameLinh
                     // if x is a picture box and tag is coin, continue
                     if (x is PictureBox && x.Tag == "coin")
                 {
-                    if (picPlayer.Bounds.IntersectsWith(x.Bounds) && !jumping)
+                    if (player.Bounds.IntersectsWith(x.Bounds) && !jumping)
                     {
                         // assign url
                         wmpChime.URL = "Sounds/chime.wav";
@@ -154,7 +162,7 @@ namespace PlatformGameLinh
                 }
 
                 // if player touches the door, stop timer and display you win
-                if (picPlayer.Bounds.IntersectsWith(picDoor.Bounds))
+                if (player.Bounds.IntersectsWith(picDoor.Bounds))
                 {
                     // stop timers
                     tmrTimer.Stop();
@@ -186,6 +194,13 @@ namespace PlatformGameLinh
             // display the time left
             lblTimer.Text = "Time Left: " + timeLeft;
 
+            // Call update lives
+            UpdateLives();
+
+        }
+
+        private void UpdateLives()
+        {
             // remove a life if total seconds is 0
             if (totalSeconds <= 0)
             {
@@ -242,6 +257,11 @@ namespace PlatformGameLinh
                     // Call Image to Front
                     ImageToFront();
 
+                    // call reset time
+                    ResetTime();
+
+                    // new stuff
+                    lives = 3;
                     // close this form and open instructions form
                     this.Hide();
                     var LoseScreen = new frmLose();
@@ -249,8 +269,8 @@ namespace PlatformGameLinh
                     LoseScreen.Show();
                 }
             }
-
         }
+
         private void LoseLifeSound()
         {
             // assign url
@@ -290,6 +310,24 @@ namespace PlatformGameLinh
                 LoseScreen.Closed += (s, args) => this.Close();
                 LoseScreen.Show();
             }
+        }
+
+       private void Wall()
+        {
+            if ((player).Bounds.IntersectsWith(wall1.Bounds))
+            {
+                player.Left = 414;
+            }
+
+            if ((player).Bounds.IntersectsWith(wall2.Bounds))
+            {
+                player.Left = 12;
+            }
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

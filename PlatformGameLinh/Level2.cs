@@ -258,8 +258,6 @@ namespace PlatformGameLinh
                     picHeart1.Show();
                     picHeart2.Hide();
                     picHeart3.Hide();
-
-
                 }
                 else
                 {
@@ -290,8 +288,10 @@ namespace PlatformGameLinh
                 // call lose life sound
                 LoseLifeSound();
 
-                // call reset time
-                ResetTime(); 
+                // reset time
+                totalSeconds = 11;
+                timeLeft = 10;
+
             }
         }
         private void LoseLifeSound()
@@ -307,18 +307,7 @@ namespace PlatformGameLinh
             // Bring images to the front 
             btnNext.BringToFront();
         }
-        private void ResetTime()
-        {
-            // reset time
-            totalSeconds = 6;
-            timeLeft = 5;
-        }
 
-        private void ResetLives()
-        {
-            // reset lives
-            lives = 3;
-        }
 
         private void CheckLives()
         {
@@ -333,16 +322,14 @@ namespace PlatformGameLinh
             }
             else
             {
-                // call reset lives and time
-                ResetLives();
-                ResetTime();
-
                 // close this form and open lose form
                 this.Hide();
                 var LoseScreen = new frmLose();
                 LoseScreen.Closed += (s, args) => this.Close();
                 LoseScreen.Show();
 
+                // reset lives
+                lives = 3;
             }
         }
         private void BtnNext_Click(object sender, EventArgs e)
