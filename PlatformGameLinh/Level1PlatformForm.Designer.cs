@@ -52,10 +52,12 @@
             this.picPlatform2 = new System.Windows.Forms.PictureBox();
             this.picPlatform1 = new System.Windows.Forms.PictureBox();
             this.picDoor = new System.Windows.Forms.PictureBox();
-            this.picPlayer = new System.Windows.Forms.PictureBox();
+            this.player = new System.Windows.Forms.PictureBox();
             this.picPlatform = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tmrTimer = new System.Windows.Forms.Timer(this.components);
+            this.wall1 = new System.Windows.Forms.PictureBox();
+            this.wall2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.wmpChime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpLoseLife)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpDoor)).BeginInit();
@@ -75,9 +77,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPlatform2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlatform1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDoor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlatform)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTimer
@@ -314,15 +318,15 @@
             this.picDoor.TabStop = false;
             this.picDoor.Tag = "door";
             // 
-            // picPlayer
+            // player
             // 
-            this.picPlayer.Image = global::PlatformGameLinh.Properties.Resources.player;
-            this.picPlayer.Location = new System.Drawing.Point(414, 420);
-            this.picPlayer.Name = "picPlayer";
-            this.picPlayer.Size = new System.Drawing.Size(58, 50);
-            this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picPlayer.TabIndex = 2;
-            this.picPlayer.TabStop = false;
+            this.player.Image = global::PlatformGameLinh.Properties.Resources.player;
+            this.player.Location = new System.Drawing.Point(414, 420);
+            this.player.Name = "player";
+            this.player.Size = new System.Drawing.Size(58, 50);
+            this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.player.TabIndex = 2;
+            this.player.TabStop = false;
             // 
             // picPlatform
             // 
@@ -336,13 +340,15 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::PlatformGameLinh.Properties.Resources.Level1Background;
-            this.pictureBox1.Location = new System.Drawing.Point(-6, -3);
+            this.pictureBox1.Location = new System.Drawing.Point(-4, -3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(492, 616);
+            this.pictureBox1.Size = new System.Drawing.Size(500, 616);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // tmrTimer
             // 
@@ -350,11 +356,31 @@
             this.tmrTimer.Interval = 20;
             this.tmrTimer.Tick += new System.EventHandler(this.tmrTimer_Tick);
             // 
+            // wall1
+            // 
+            this.wall1.Image = global::PlatformGameLinh.Properties.Resources.Level1Background;
+            this.wall1.Location = new System.Drawing.Point(486, -1);
+            this.wall1.Name = "wall1";
+            this.wall1.Size = new System.Drawing.Size(10, 578);
+            this.wall1.TabIndex = 26;
+            this.wall1.TabStop = false;
+            // 
+            // wall2
+            // 
+            this.wall2.Image = global::PlatformGameLinh.Properties.Resources.Level1Background;
+            this.wall2.Location = new System.Drawing.Point(-1, -3);
+            this.wall2.Name = "wall2";
+            this.wall2.Size = new System.Drawing.Size(10, 585);
+            this.wall2.TabIndex = 27;
+            this.wall2.TabStop = false;
+            // 
             // frmLevel1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 611);
+            this.ClientSize = new System.Drawing.Size(495, 611);
+            this.Controls.Add(this.wall2);
+            this.Controls.Add(this.wall1);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -373,7 +399,7 @@
             this.Controls.Add(this.picPlatform2);
             this.Controls.Add(this.picPlatform1);
             this.Controls.Add(this.picDoor);
-            this.Controls.Add(this.picPlayer);
+            this.Controls.Add(this.player);
             this.Controls.Add(this.picPlatform);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.wmpDoor);
@@ -402,9 +428,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPlatform2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlatform1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDoor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlatform)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,7 +442,7 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox picPlatform;
-        private System.Windows.Forms.PictureBox picPlayer;
+        private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.PictureBox picDoor;
         private System.Windows.Forms.PictureBox picPlatform1;
         private System.Windows.Forms.PictureBox picPlatform2;
@@ -438,6 +466,8 @@
         private AxWMPLib.AxWindowsMediaPlayer wmpLoseLife;
         private AxWMPLib.AxWindowsMediaPlayer wmpDoor;
         private System.Windows.Forms.Timer tmrTimer;
+        private System.Windows.Forms.PictureBox wall1;
+        private System.Windows.Forms.PictureBox wall2;
     }
 }
 
