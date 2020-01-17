@@ -15,8 +15,6 @@ namespace PlatformGameLinh
         public frmMainMenu()
         {
             InitializeComponent();
-            // disable level 3...
-            btnLevel3.Enabled = false;
         }
 
         private void MniExit_Click(object sender, EventArgs e)
@@ -50,6 +48,15 @@ namespace PlatformGameLinh
             var Level2 = new frmLevel2();
             Level2.Closed += (s, args) => this.Close();
             Level2.Show();
+        }
+
+        private void btnLevel3_Click(object sender, EventArgs e)
+        {
+            // close this form and open level 3
+            this.Hide();
+            var Level3 = new frmLevel3();
+            Level3.Closed += (s, args) => this.Close();
+            Level3.Show();
         }
     }
 }

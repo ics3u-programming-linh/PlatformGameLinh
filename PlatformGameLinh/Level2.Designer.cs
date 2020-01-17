@@ -37,6 +37,12 @@
             this.wmpChime = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpDoor = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpLoseLife = new AxWMPLib.AxWindowsMediaPlayer();
+            this.lblScore = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.picSad4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.picSad3 = new System.Windows.Forms.PictureBox();
+            this.picSad2 = new System.Windows.Forms.PictureBox();
             this.picSad1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.picPlatform9 = new System.Windows.Forms.PictureBox();
@@ -55,13 +61,16 @@
             this.picPlatform8 = new System.Windows.Forms.PictureBox();
             this.picPlatform4 = new System.Windows.Forms.PictureBox();
             this.picBackground = new System.Windows.Forms.PictureBox();
-            this.picSad2 = new System.Windows.Forms.PictureBox();
-            this.picSad3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.picSad4 = new System.Windows.Forms.PictureBox();
+            this.wall1 = new System.Windows.Forms.PictureBox();
+            this.wall2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.wmpChime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpDoor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpLoseLife)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSad4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSad3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSad2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlatform9)).BeginInit();
@@ -80,10 +89,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPlatform8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlatform4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSad2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSad3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSad4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall2)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrTimer
@@ -150,10 +157,74 @@
             this.wmpLoseLife.TabIndex = 25;
             this.wmpLoseLife.Visible = false;
             // 
+            // lblScore
+            // 
+            this.lblScore.AutoSize = true;
+            this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScore.Location = new System.Drawing.Point(12, 31);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(59, 20);
+            this.lblScore.TabIndex = 38;
+            this.lblScore.Text = "Score: ";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::PlatformGameLinh.Properties.Resources.coin;
+            this.pictureBox5.Location = new System.Drawing.Point(332, 527);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(41, 29);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 35;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Tag = "coin";
+            // 
+            // picSad4
+            // 
+            this.picSad4.Image = global::PlatformGameLinh.Properties.Resources.loselife;
+            this.picSad4.Location = new System.Drawing.Point(37, 60);
+            this.picSad4.Name = "picSad4";
+            this.picSad4.Size = new System.Drawing.Size(55, 43);
+            this.picSad4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSad4.TabIndex = 34;
+            this.picSad4.TabStop = false;
+            this.picSad4.Tag = "sad";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::PlatformGameLinh.Properties.Resources.platform2;
+            this.pictureBox3.Location = new System.Drawing.Point(376, 146);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(113, 15);
+            this.pictureBox3.TabIndex = 33;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Tag = "platform";
+            // 
+            // picSad3
+            // 
+            this.picSad3.Image = global::PlatformGameLinh.Properties.Resources.loselife;
+            this.picSad3.Location = new System.Drawing.Point(17, 357);
+            this.picSad3.Name = "picSad3";
+            this.picSad3.Size = new System.Drawing.Size(55, 43);
+            this.picSad3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSad3.TabIndex = 32;
+            this.picSad3.TabStop = false;
+            this.picSad3.Tag = "sad";
+            // 
+            // picSad2
+            // 
+            this.picSad2.Image = global::PlatformGameLinh.Properties.Resources.loselife;
+            this.picSad2.Location = new System.Drawing.Point(17, 533);
+            this.picSad2.Name = "picSad2";
+            this.picSad2.Size = new System.Drawing.Size(55, 43);
+            this.picSad2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSad2.TabIndex = 31;
+            this.picSad2.TabStop = false;
+            this.picSad2.Tag = "sad";
+            // 
             // picSad1
             // 
             this.picSad1.Image = global::PlatformGameLinh.Properties.Resources.loselife;
-            this.picSad1.Location = new System.Drawing.Point(32, 202);
+            this.picSad1.Location = new System.Drawing.Point(388, 239);
             this.picSad1.Name = "picSad1";
             this.picSad1.Size = new System.Drawing.Size(55, 43);
             this.picSad1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -164,7 +235,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PlatformGameLinh.Properties.Resources.platform2;
-            this.pictureBox2.Location = new System.Drawing.Point(391, 494);
+            this.pictureBox2.Location = new System.Drawing.Point(396, 425);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(92, 23);
             this.pictureBox2.TabIndex = 29;
@@ -174,7 +245,7 @@
             // picPlatform9
             // 
             this.picPlatform9.Image = global::PlatformGameLinh.Properties.Resources.platform2;
-            this.picPlatform9.Location = new System.Drawing.Point(32, 397);
+            this.picPlatform9.Location = new System.Drawing.Point(-4, 398);
             this.picPlatform9.Name = "picPlatform9";
             this.picPlatform9.Size = new System.Drawing.Size(92, 23);
             this.picPlatform9.TabIndex = 28;
@@ -184,7 +255,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PlatformGameLinh.Properties.Resources.coin;
-            this.pictureBox1.Location = new System.Drawing.Point(211, 145);
+            this.pictureBox1.Location = new System.Drawing.Point(211, 132);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(41, 29);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -195,7 +266,7 @@
             // picCoin
             // 
             this.picCoin.Image = global::PlatformGameLinh.Properties.Resources.coin;
-            this.picCoin.Location = new System.Drawing.Point(210, 426);
+            this.picCoin.Location = new System.Drawing.Point(211, 427);
             this.picCoin.Name = "picCoin";
             this.picCoin.Size = new System.Drawing.Size(41, 29);
             this.picCoin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -206,7 +277,7 @@
             // picPlatform3
             // 
             this.picPlatform3.Image = global::PlatformGameLinh.Properties.Resources.platform2;
-            this.picPlatform3.Location = new System.Drawing.Point(363, 263);
+            this.picPlatform3.Location = new System.Drawing.Point(359, 281);
             this.picPlatform3.Name = "picPlatform3";
             this.picPlatform3.Size = new System.Drawing.Size(125, 30);
             this.picPlatform3.TabIndex = 22;
@@ -216,7 +287,7 @@
             // picPlayer
             // 
             this.picPlayer.Image = global::PlatformGameLinh.Properties.Resources.player;
-            this.picPlayer.Location = new System.Drawing.Point(393, 426);
+            this.picPlayer.Location = new System.Drawing.Point(409, 341);
             this.picPlayer.Name = "picPlayer";
             this.picPlayer.Size = new System.Drawing.Size(60, 51);
             this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -226,7 +297,7 @@
             // picDoor
             // 
             this.picDoor.Image = global::PlatformGameLinh.Properties.Resources.door;
-            this.picDoor.Location = new System.Drawing.Point(12, 35);
+            this.picDoor.Location = new System.Drawing.Point(409, 74);
             this.picDoor.Name = "picDoor";
             this.picDoor.Size = new System.Drawing.Size(61, 72);
             this.picDoor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -237,7 +308,7 @@
             // 
             this.picHeart3.BackColor = System.Drawing.Color.Transparent;
             this.picHeart3.Image = global::PlatformGameLinh.Properties.Resources.heart;
-            this.picHeart3.Location = new System.Drawing.Point(430, 12);
+            this.picHeart3.Location = new System.Drawing.Point(431, 13);
             this.picHeart3.Name = "picHeart3";
             this.picHeart3.Size = new System.Drawing.Size(53, 45);
             this.picHeart3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -248,7 +319,7 @@
             // 
             this.picHeart2.BackColor = System.Drawing.Color.Transparent;
             this.picHeart2.Image = global::PlatformGameLinh.Properties.Resources.heart;
-            this.picHeart2.Location = new System.Drawing.Point(375, 12);
+            this.picHeart2.Location = new System.Drawing.Point(376, 13);
             this.picHeart2.Name = "picHeart2";
             this.picHeart2.Size = new System.Drawing.Size(53, 45);
             this.picHeart2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -259,7 +330,7 @@
             // 
             this.picHeart1.BackColor = System.Drawing.Color.Transparent;
             this.picHeart1.Image = global::PlatformGameLinh.Properties.Resources.heart;
-            this.picHeart1.Location = new System.Drawing.Point(319, 12);
+            this.picHeart1.Location = new System.Drawing.Point(320, 13);
             this.picHeart1.Name = "picHeart1";
             this.picHeart1.Size = new System.Drawing.Size(53, 45);
             this.picHeart1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -269,7 +340,7 @@
             // picPlatform1
             // 
             this.picPlatform1.Image = global::PlatformGameLinh.Properties.Resources.platform2;
-            this.picPlatform1.Location = new System.Drawing.Point(-1, 575);
+            this.picPlatform1.Location = new System.Drawing.Point(0, 576);
             this.picPlatform1.Name = "picPlatform1";
             this.picPlatform1.Size = new System.Drawing.Size(489, 37);
             this.picPlatform1.TabIndex = 10;
@@ -279,7 +350,7 @@
             // picPlatform6
             // 
             this.picPlatform6.Image = global::PlatformGameLinh.Properties.Resources.platform2;
-            this.picPlatform6.Location = new System.Drawing.Point(178, 180);
+            this.picPlatform6.Location = new System.Drawing.Point(179, 167);
             this.picPlatform6.Name = "picPlatform6";
             this.picPlatform6.Size = new System.Drawing.Size(117, 30);
             this.picPlatform6.TabIndex = 6;
@@ -289,7 +360,7 @@
             // picPlatform2
             // 
             this.picPlatform2.Image = global::PlatformGameLinh.Properties.Resources.platform2;
-            this.picPlatform2.Location = new System.Drawing.Point(160, 461);
+            this.picPlatform2.Location = new System.Drawing.Point(161, 462);
             this.picPlatform2.Name = "picPlatform2";
             this.picPlatform2.Size = new System.Drawing.Size(135, 30);
             this.picPlatform2.TabIndex = 4;
@@ -299,7 +370,7 @@
             // picPlatform5
             // 
             this.picPlatform5.Image = global::PlatformGameLinh.Properties.Resources.platform2;
-            this.picPlatform5.Location = new System.Drawing.Point(210, 308);
+            this.picPlatform5.Location = new System.Drawing.Point(211, 309);
             this.picPlatform5.Name = "picPlatform5";
             this.picPlatform5.Size = new System.Drawing.Size(42, 30);
             this.picPlatform5.TabIndex = 3;
@@ -309,7 +380,7 @@
             // picPlatform8
             // 
             this.picPlatform8.Image = global::PlatformGameLinh.Properties.Resources.platform2;
-            this.picPlatform8.Location = new System.Drawing.Point(-1, 107);
+            this.picPlatform8.Location = new System.Drawing.Point(0, 103);
             this.picPlatform8.Name = "picPlatform8";
             this.picPlatform8.Size = new System.Drawing.Size(148, 30);
             this.picPlatform8.TabIndex = 2;
@@ -319,7 +390,7 @@
             // picPlatform4
             // 
             this.picPlatform4.Image = global::PlatformGameLinh.Properties.Resources.platform2;
-            this.picPlatform4.Location = new System.Drawing.Point(-1, 244);
+            this.picPlatform4.Location = new System.Drawing.Point(0, 245);
             this.picPlatform4.Name = "picPlatform4";
             this.picPlatform4.Size = new System.Drawing.Size(125, 30);
             this.picPlatform4.TabIndex = 1;
@@ -329,61 +400,38 @@
             // picBackground
             // 
             this.picBackground.Image = global::PlatformGameLinh.Properties.Resources.Level2;
-            this.picBackground.Location = new System.Drawing.Point(-19, -66);
+            this.picBackground.Location = new System.Drawing.Point(-39, -17);
             this.picBackground.Name = "picBackground";
-            this.picBackground.Size = new System.Drawing.Size(589, 687);
+            this.picBackground.Size = new System.Drawing.Size(545, 687);
             this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBackground.TabIndex = 0;
             this.picBackground.TabStop = false;
             // 
-            // picSad2
+            // wall1
             // 
-            this.picSad2.Image = global::PlatformGameLinh.Properties.Resources.loselife;
-            this.picSad2.Location = new System.Drawing.Point(293, 532);
-            this.picSad2.Name = "picSad2";
-            this.picSad2.Size = new System.Drawing.Size(55, 43);
-            this.picSad2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSad2.TabIndex = 31;
-            this.picSad2.TabStop = false;
-            this.picSad2.Tag = "sad";
+            this.wall1.Image = global::PlatformGameLinh.Properties.Resources.Level1Background;
+            this.wall1.Location = new System.Drawing.Point(0, -2);
+            this.wall1.Name = "wall1";
+            this.wall1.Size = new System.Drawing.Size(10, 578);
+            this.wall1.TabIndex = 36;
+            this.wall1.TabStop = false;
             // 
-            // picSad3
+            // wall2
             // 
-            this.picSad3.Image = global::PlatformGameLinh.Properties.Resources.loselife;
-            this.picSad3.Location = new System.Drawing.Point(12, 532);
-            this.picSad3.Name = "picSad3";
-            this.picSad3.Size = new System.Drawing.Size(55, 43);
-            this.picSad3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSad3.TabIndex = 32;
-            this.picSad3.TabStop = false;
-            this.picSad3.Tag = "sad";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::PlatformGameLinh.Properties.Resources.platform2;
-            this.pictureBox3.Location = new System.Drawing.Point(375, 134);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(113, 15);
-            this.pictureBox3.TabIndex = 33;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Tag = "platform";
-            // 
-            // picSad4
-            // 
-            this.picSad4.Image = global::PlatformGameLinh.Properties.Resources.loselife;
-            this.picSad4.Location = new System.Drawing.Point(408, 92);
-            this.picSad4.Name = "picSad4";
-            this.picSad4.Size = new System.Drawing.Size(55, 43);
-            this.picSad4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSad4.TabIndex = 34;
-            this.picSad4.TabStop = false;
-            this.picSad4.Tag = "sad";
+            this.wall2.Image = global::PlatformGameLinh.Properties.Resources.Level1Background;
+            this.wall2.Location = new System.Drawing.Point(487, 0);
+            this.wall2.Name = "wall2";
+            this.wall2.Size = new System.Drawing.Size(10, 578);
+            this.wall2.TabIndex = 37;
+            this.wall2.TabStop = false;
             // 
             // frmLevel2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 611);
+            this.Controls.Add(this.lblScore);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.picSad4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.picSad3);
@@ -411,6 +459,8 @@
             this.Controls.Add(this.wmpChime);
             this.Controls.Add(this.wmpDoor);
             this.Controls.Add(this.wmpLoseLife);
+            this.Controls.Add(this.wall1);
+            this.Controls.Add(this.wall2);
             this.Name = "frmLevel2";
             this.Text = "Level 2";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
@@ -418,6 +468,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.wmpChime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpDoor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpLoseLife)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSad4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSad3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSad2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSad1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlatform9)).EndInit();
@@ -436,10 +491,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPlatform8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlatform4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSad2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSad3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSad4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,5 +529,9 @@
         private System.Windows.Forms.PictureBox picSad3;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox picSad4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox wall1;
+        private System.Windows.Forms.PictureBox wall2;
+        private System.Windows.Forms.Label lblScore;
     }
 }

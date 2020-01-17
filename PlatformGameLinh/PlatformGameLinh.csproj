@@ -70,6 +70,12 @@
     <Compile Include="Level2.Designer.cs">
       <DependentUpon>Level2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Level3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Level3.Designer.cs">
+      <DependentUpon>Level3.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,12 @@
     <Compile Include="WinForm2.Designer.cs">
       <DependentUpon>WinForm2.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinForm3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm3.Designer.cs">
+      <DependentUpon>WinForm3.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CreditsForm.resx">
       <DependentUpon>CreditsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Level2.resx">
       <DependentUpon>Level2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Level3.resx">
+      <DependentUpon>Level3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoseForm.resx">
       <DependentUpon>LoseForm.cs</DependentUpon>
@@ -138,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WinForm2.resx">
       <DependentUpon>WinForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForm3.resx">
+      <DependentUpon>WinForm3.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -239,6 +257,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\loselife.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\platform3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Level3Half.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Level4.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

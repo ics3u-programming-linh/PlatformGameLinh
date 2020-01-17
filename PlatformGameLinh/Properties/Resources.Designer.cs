@@ -163,6 +163,26 @@ namespace PlatformGameLinh.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Level3Half {
+            get {
+                object obj = ResourceManager.GetObject("Level3Half", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Level4 {
+            get {
+                object obj = ResourceManager.GetObject("Level4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lose {
             get {
                 object obj = ResourceManager.GetObject("lose", resourceCulture);
@@ -226,6 +246,16 @@ namespace PlatformGameLinh.Properties {
         internal static System.Drawing.Bitmap platform2 {
             get {
                 object obj = ResourceManager.GetObject("platform2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap platform3 {
+            get {
+                object obj = ResourceManager.GetObject("platform3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

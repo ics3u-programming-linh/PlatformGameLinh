@@ -36,6 +36,8 @@
             this.wmpChime = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpLoseLife = new AxWMPLib.AxWindowsMediaPlayer();
             this.wmpDoor = new AxWMPLib.AxWindowsMediaPlayer();
+            this.tmrTimer = new System.Windows.Forms.Timer(this.components);
+            this.lblScore = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -55,9 +57,8 @@
             this.player = new System.Windows.Forms.PictureBox();
             this.picPlatform = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tmrTimer = new System.Windows.Forms.Timer(this.components);
-            this.wall1 = new System.Windows.Forms.PictureBox();
             this.wall2 = new System.Windows.Forms.PictureBox();
+            this.wall1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.wmpChime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpLoseLife)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpDoor)).BeginInit();
@@ -80,8 +81,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlatform)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wall1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wall2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTimer
@@ -141,6 +142,22 @@
             this.wmpDoor.Size = new System.Drawing.Size(223, 91);
             this.wmpDoor.TabIndex = 25;
             this.wmpDoor.Visible = false;
+            // 
+            // tmrTimer
+            // 
+            this.tmrTimer.Enabled = true;
+            this.tmrTimer.Interval = 20;
+            this.tmrTimer.Tick += new System.EventHandler(this.tmrTimer_Tick);
+            // 
+            // lblScore
+            // 
+            this.lblScore.AutoSize = true;
+            this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScore.Location = new System.Drawing.Point(13, 33);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(59, 20);
+            this.lblScore.TabIndex = 28;
+            this.lblScore.Text = "Score: ";
             // 
             // pictureBox5
             // 
@@ -348,22 +365,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
-            // 
-            // tmrTimer
-            // 
-            this.tmrTimer.Enabled = true;
-            this.tmrTimer.Interval = 20;
-            this.tmrTimer.Tick += new System.EventHandler(this.tmrTimer_Tick);
-            // 
-            // wall1
-            // 
-            this.wall1.Image = global::PlatformGameLinh.Properties.Resources.Level1Background;
-            this.wall1.Location = new System.Drawing.Point(486, -1);
-            this.wall1.Name = "wall1";
-            this.wall1.Size = new System.Drawing.Size(10, 578);
-            this.wall1.TabIndex = 26;
-            this.wall1.TabStop = false;
             // 
             // wall2
             // 
@@ -374,13 +375,21 @@
             this.wall2.TabIndex = 27;
             this.wall2.TabStop = false;
             // 
+            // wall1
+            // 
+            this.wall1.Image = global::PlatformGameLinh.Properties.Resources.Level1Background;
+            this.wall1.Location = new System.Drawing.Point(486, -1);
+            this.wall1.Name = "wall1";
+            this.wall1.Size = new System.Drawing.Size(10, 578);
+            this.wall1.TabIndex = 26;
+            this.wall1.TabStop = false;
+            // 
             // frmLevel1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(495, 611);
-            this.Controls.Add(this.wall2);
-            this.Controls.Add(this.wall1);
+            this.Controls.Add(this.lblScore);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -405,6 +414,8 @@
             this.Controls.Add(this.wmpDoor);
             this.Controls.Add(this.wmpLoseLife);
             this.Controls.Add(this.wmpChime);
+            this.Controls.Add(this.wall2);
+            this.Controls.Add(this.wall1);
             this.Name = "frmLevel1";
             this.Text = "Level 1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
@@ -431,8 +442,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlatform)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wall1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wall2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,6 +479,7 @@
         private System.Windows.Forms.Timer tmrTimer;
         private System.Windows.Forms.PictureBox wall1;
         private System.Windows.Forms.PictureBox wall2;
+        private System.Windows.Forms.Label lblScore;
     }
 }
 

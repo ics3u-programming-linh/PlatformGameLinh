@@ -43,3 +43,5 @@ C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGam
 C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.frmCredits.resources
 C:\Users\s272936\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.frmCredits.resources
 C:\Users\s272936\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.frmWin2.resources
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.frmLevel3.resources
+C:\Users\Linh_\Documents\PlatformGameLinh\PlatformGameLinh\obj\Debug\PlatformGameLinh.frmWin3.resources

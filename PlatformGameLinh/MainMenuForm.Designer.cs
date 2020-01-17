@@ -80,6 +80,7 @@
             this.btnLevel3.TabIndex = 3;
             this.btnLevel3.Text = "Level 3";
             this.btnLevel3.UseVisualStyleBackColor = true;
+            this.btnLevel3.Click += new System.EventHandler(this.btnLevel3_Click);
             // 
             // mnuStrip
             // 
@@ -95,7 +96,7 @@
             // mniExit
             // 
             this.mniExit.Name = "mniExit";
-            this.mniExit.Size = new System.Drawing.Size(38, 20);
+            this.mniExit.Size = new System.Drawing.Size(37, 20);
             this.mniExit.Text = "Exit";
             this.mniExit.Click += new System.EventHandler(this.MniExit_Click);
             // 

@@ -20,8 +20,9 @@ namespace PlatformGameLinh
         int jumpSpeed = 10;
         int force = 5;
 
-        // declare variables for lives
+        // declare variables for lives and score
         int lives = 3;
+        int score = 0;
 
         // declare variables for timer
         int totalSeconds = 6;
@@ -31,8 +32,7 @@ namespace PlatformGameLinh
         {
             InitializeComponent();
 
-            
-            // call hide objects
+            // call initializations
             HideWinLose();
             Wall();
 
@@ -89,12 +89,15 @@ namespace PlatformGameLinh
             {
                 jumping = false;
             }
+            // call wall
             Wall();
         }
 
         private void tmrTimer_Tick(object sender, EventArgs e)
         {
+            // call wall
             Wall();
+
             // continously drop player towards the platform (the ground)
             player.Top += jumpSpeed;
 
@@ -144,20 +147,26 @@ namespace PlatformGameLinh
                     }
                 }
 
-                    // if x is a picture box and tag is coin, continue
-                    if (x is PictureBox && x.Tag == "coin")
+                // if x is a picture box and tag is coin, continue
+                if (x is PictureBox && x.Tag == "coin")
                 {
                     if (player.Bounds.IntersectsWith(x.Bounds) && !jumping)
                     {
+
                         // assign url
                         wmpChime.URL = "Sounds/chime.wav";
 
                         // Play the sound
                         wmpChime.Ctlcontrols.play();
 
+                        // increment the score
+                        score++;
+
+                        // display the score
+                        lblScore.Text = "Score: " + score;
+
                         // remove the coin
                         this.Controls.Remove(x);
-
                     }
                 }
 
@@ -202,7 +211,7 @@ namespace PlatformGameLinh
         private void UpdateLives()
         {
             // remove a life if total seconds is 0
-            if (totalSeconds <= 0)
+            if (totalSeconds == 0)
             {
                 if (lives == 3)
                 {
@@ -262,6 +271,7 @@ namespace PlatformGameLinh
 
                     // new stuff
                     lives = 3;
+
                     // close this form and open instructions form
                     this.Hide();
                     var LoseScreen = new frmLose();
@@ -294,40 +304,26 @@ namespace PlatformGameLinh
 
         private void BtnLevel2_Click(object sender, EventArgs e)
         {
-            if (lives > 0)
-            {
-                // close this form and open win screen
-                this.Hide();
-                var WinScreen = new frmWin();
-                WinScreen.Closed += (s, args) => this.Close();
-                WinScreen.Show();
-            }
-            else
-            {
-                // close this form and open instructions form
-                this.Hide();
-                var LoseScreen = new frmLose();
-                LoseScreen.Closed += (s, args) => this.Close();
-                LoseScreen.Show();
-            }
+            // close this form and open win screen
+            this.Hide();
+            var WinScreen = new frmWin();
+            WinScreen.Closed += (s, args) => this.Close();
+            WinScreen.Show();
         }
 
-       private void Wall()
+        private void Wall()
         {
+            // if player intersects with either wall, it will not allows the user to pass through the wall.
             if ((player).Bounds.IntersectsWith(wall1.Bounds))
             {
                 player.Left = 414;
             }
 
+            // if player intersects with either wall, it will not allows the user to pass through the wall.
             if ((player).Bounds.IntersectsWith(wall2.Bounds))
             {
                 player.Left = 12;
             }
-        }
-
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

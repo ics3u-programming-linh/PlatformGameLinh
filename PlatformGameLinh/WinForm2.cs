@@ -15,13 +15,15 @@ namespace PlatformGameLinh
         public frmWin2()
         {
             InitializeComponent();
-            // disable level 3 (in progress....)
-            btnLevel3.Enabled = false;
         }
 
         private void btnLevel3_Click(object sender, EventArgs e)
         {
-
+            // close this form and open level 3 screen
+            this.Hide();
+            var Level3 = new frmLevel3();
+            Level3.Closed += (s, args) => this.Close();
+            Level3.Show();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

@@ -12,7 +12,6 @@ namespace PlatformGameLinh
 {
     public partial class frmLevel2 : Form
     {
-
         // declare variables and set bool variables 
         bool goleft = false;
         bool goright = false;
@@ -20,18 +19,20 @@ namespace PlatformGameLinh
         int jumpSpeed = 10;
         int force = 5;
 
-        // declare variables for lives
+        // declare variables for lives and score
         int lives = 3;
+        int score = 0;
 
         // declare variables for timer
-        int totalSeconds = 11;
-        int timeLeft = 10;
+        int totalSeconds = 16;
+        int timeLeft = 15;
 
         public frmLevel2()
         {
             InitializeComponent();
             // call hide objects
             HideWinLose();
+            Wall();
         }
 
         private void ShowWinLose()
@@ -62,6 +63,9 @@ namespace PlatformGameLinh
             {
                 jumping = true;
             }
+
+            // call wall
+            Wall();
         }
 
         private void keyisup(object sender, KeyEventArgs e)
@@ -81,10 +85,16 @@ namespace PlatformGameLinh
             {
                 jumping = false;
             }
+
+            // call wall
+            Wall();
         }
 
         private void TmrTimer_Tick(object sender, EventArgs e)
         {
+
+            // call wall
+            Wall();
 
             // continously drop player towards the platform (the ground)
             picPlayer.Top += jumpSpeed;
@@ -146,6 +156,12 @@ namespace PlatformGameLinh
                         // Play the sound
                         wmpChime.Ctlcontrols.play();
 
+                        // increment the score
+                        score++;
+
+                        // display the score
+                        lblScore.Text = "Score: " + score;
+
                         // remove the coin
                         this.Controls.Remove(x);
                     }
@@ -162,10 +178,22 @@ namespace PlatformGameLinh
                         // play lose sound
                         LoseLifeSound();
 
+                        // decrease the score
+                        score--;
+
+                        // display the score
+                        lblScore.Text = "Score: " + score;
+
                         // remove the coin
                         this.Controls.Remove(x);
 
-                        if (lives == 2)
+                        if (lives == 3)
+                        {
+                            picHeart1.Show();
+                            picHeart2.Show();
+                            picHeart3.Show();
+                        }
+                        else if (lives == 2)
                         {
                             // display 2 lives
                             picHeart1.Show();
@@ -186,12 +214,15 @@ namespace PlatformGameLinh
                             picHeart2.Hide();
                             picHeart3.Hide();
 
-                        }
+                            // Stop timer
+                            tmrTimer.Stop();
+                            tmrCountdown.Stop();
 
-                        if (lives == 0)
-                        {
-                            // Call to Check lives
-                            CheckLives();
+                            // close this form and open lose form
+                            this.Hide();
+                            var LoseScreen = new frmLose();
+                            LoseScreen.Closed += (s, args) => this.Close();
+                            LoseScreen.Show();
                         }
 
                     }
@@ -236,38 +267,36 @@ namespace PlatformGameLinh
             lblTimer.Text = "Time Left: " + timeLeft;
 
             // remove a life if total seconds is 0
-            if (totalSeconds <= 0)
+            if (totalSeconds == 0)
             {
-                if (lives == 3)
-                {
-                    // remove a life
-                    lives = lives - 1;
+                // remove a life
+                lives = lives - 1;
 
+                // call lose life sound
+                LoseLifeSound();
+
+                if (lives == 2)
+                {
                     // display lives
                     picHeart1.Show();
                     picHeart2.Show();
                     picHeart3.Hide();
 
+                    // Call reset time
+                    ResetTime();
                 }
-                else if (lives == 2)
+                else if (lives == 1)
                 {
-                    // remove a life
-                    lives = lives - 1;
-
                     // display lives
                     picHeart1.Show();
                     picHeart2.Hide();
                     picHeart3.Hide();
+
+                    // Call reset time
+                    ResetTime();
                 }
-                else
+                else 
                 {
-
-                    // remove a life
-                    lives = lives - 1;
-
-                    // call lose life sound
-                    LoseLifeSound();
-
                     // stop time
                     tmrTimer.Stop();
                     tmrCountdown.Stop();
@@ -280,17 +309,12 @@ namespace PlatformGameLinh
                     picHeart2.Hide();
                     picHeart3.Hide();
 
-                    // call check lives
-                    CheckLives();
-
+                    // close this form and open lose form
+                    this.Hide();
+                    var LoseScreen = new frmLose();
+                    LoseScreen.Closed += (s, args) => this.Close();
+                    LoseScreen.Show();
                 }
-
-                // call lose life sound
-                LoseLifeSound();
-
-                // reset time
-                totalSeconds = 11;
-                timeLeft = 10;
 
             }
         }
@@ -311,39 +335,33 @@ namespace PlatformGameLinh
         private void ResetTime()
         {
             // reset time
-            totalSeconds = 11;
-            timeLeft = 10;
+            totalSeconds = 16;
+            timeLeft = 15;
         }
 
-        private void CheckLives()
-        {
-            // if they have 0 lives show lose screen, else if its greater show you win screen
-            if (lives > 0)
-            {
-                // close this form and open win screen
-                this.Hide();
-                var WinScreen = new frmWin2();
-                WinScreen.Closed += (s, args) => this.Close();
-                WinScreen.Show();
-            }
-            else
-            {
-                // close this form and open lose form
-                this.Hide();
-                var LoseScreen = new frmLose();
-                LoseScreen.Closed += (s, args) => this.Close();
-                LoseScreen.Show();
-
-                // reset lives
-                lives = 3;
-            }
-        }
         private void BtnNext_Click(object sender, EventArgs e)
         {
-            // Call Check lives
-            CheckLives();
+            // close this form and open win screen
+            this.Hide();
+            var WinScreen = new frmWin2();
+            WinScreen.Closed += (s, args) => this.Close();
+            WinScreen.Show();
         }
 
-        //// LOSE LIVES KEEPS PLAYING EVEN IF IM DONE LOL. PLAYED IN MAIN MENU. DOESNT LSOE ANY LIVES. JUST PEATEDLY MAKES THAT SOUND.
+        private void Wall()
+        {
+            // moves player to the other side
+            if ((picPlayer).Bounds.IntersectsWith(wall1.Bounds))
+            {
+                picPlayer.Left = 414;
+            }
+
+            // moves player to the other side
+            if ((picPlayer).Bounds.IntersectsWith(wall2.Bounds))
+            {
+                picPlayer.Left = 12;
+            }
+        }
+
     }
 }
