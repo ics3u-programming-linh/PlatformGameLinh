@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Created by: Linh Ho
+ * Created on: January 16th, 2020
+ * Created for: ICS3U Programming
+ * Level 1 Screen: Easiest platform game level
+*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

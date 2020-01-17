@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Created by: Linh Ho
+ * Created on: January 16th, 2020
+ * Created for: ICS3U Programming
+ * Splash Screen
+*/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
