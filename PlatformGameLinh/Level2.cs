@@ -310,8 +310,8 @@ namespace PlatformGameLinh
         private void ResetTime()
         {
             // reset time
-            totalSeconds = 6;
-            timeLeft = 5;
+            totalSeconds = 11;
+            timeLeft = 10;
         }
 
         private void ResetLives()
